@@ -1,0 +1,119 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Card with hover details - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .card {
+        height: 15rem;
+        width: 15rem;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+    .card img {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .card:hover .details {
+        opacity: 1;
+        height: 100%;
+    }
+
+    .details {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        opacity: 0;
+        transition: 0.5s ease;
+    }
+
+    .details h4 {
+        margin: 0;
+    }
+
+    .details p {
+        margin: 2px 0;
+        font-size: 10px;
+    }
+
+    .social-icons {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .social-icons li {
+        margin: 0 10px;
+    }
+
+    .social-icons li a {
+        color: deepskyblue;
+    }
+</style>
+
+<body>
+    <div class="card">
+        <img src="../../imgs/interior2.jpg" alt="">
+        <div class="details">
+            <h4>Home Decors</h4>
+            <p>Decorate your home with us</p>
+            <ul class="social-icons">
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Animated Gradient Border - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gradient-border {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        height: 10rem;
+        width: 10rem;
+        border-radius: 100px;
+        background: #111827;
+        box-shadow: inset 20px 20px 39px #070a10,
+            inset -20px -20px 39px #1b263e;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .gradient-border::after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        background: linear-gradient(35deg, deepskyblue, deeppink, lawngreen);
+        border-radius: 50%;
+        z-index: -1;
+        filter: blur(3px);
+    }
+
+    .gradient-border:hover::after {
+        animation: rotate 1s linear infinite;
+    }
+
+    @keyframes rotate {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<body>
+    <button class="gradient-border">
+        Hover Me!
+    </button>
+</body>
+
+</html>
