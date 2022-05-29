@@ -1,0 +1,65 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Glassmorphic Card Effect - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 30px;
+        width: 12rem;
+        height: 15rem;
+        position: relative;
+    }
+
+    .circle {
+        position: absolute;
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        background: deepskyblue;
+        transform: translate(-8rem, 9rem);
+    }
+
+    .circle:nth-child(2) {
+        transform: translate(8rem, -9rem);
+        background: deeppink;
+    }
+</style>
+
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="card">
+        <h2>Code Scientist</h2>
+        <p>Glassmorphic Card using CSS. Source code link in bio.</p>
+    </div>
+</body>
+
+</html>
