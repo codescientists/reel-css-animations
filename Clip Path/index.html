@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Clip Path - @code.scientist</title>
+</head>
+
+<style>
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        transition: 0.3s;
+        display: block;
+        margin: 40px auto;
+    }
+
+    img:hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+</style>
+
+<body>
+    <img src="https://cdn.pixabay.com/photo/2022/01/04/19/01/fantastic-6915749_960_720.jpg" />
+</body>
+
+</html>
