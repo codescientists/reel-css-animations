@@ -1,0 +1,94 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Neomorphic Toggle Button - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .checkbox {
+        height: 40px;
+        width: 100px;
+        margin: 5px;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .checkbox input {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        appearance: none;
+        cursor: pointer;
+    }
+
+    .checkbox input::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 150px;
+        background: linear-gradient(45deg, #0f1623, #121a2a);
+        box-shadow: 5px -5px 10px #070a10,
+            -5px 5px 10px #1b263e;
+    }
+
+    .checkbox input:checked::before {
+        background: linear-gradient(45deg, deepskyblue, deeppink);
+    }
+
+    .checkbox input::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        border-radius: 150px;
+        background: #111827;
+        box-shadow: inset 5px -5px 10px #070a10,
+            inset -5px 5px 10px #1b263e;
+        transform: translate(0px, 0px);
+        transition: 0.3s ease;
+    }
+
+    .checkbox input:checked::after {
+        transform: translate(60px, 0px);
+    }
+</style>
+
+<body>
+    <div class="checkbox">
+        <input type="checkbox">
+    </div>
+</body>
+
+</html>

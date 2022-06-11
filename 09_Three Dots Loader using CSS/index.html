@@ -1,0 +1,84 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Three Dots Loader - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loader {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        display: flex;
+    }
+
+    .circle {
+        background: deepskyblue;
+        width: 20px;
+        height: 20px;
+        margin: 0 4px;
+        border-radius: 50%;
+        animation: animate 2s infinite linear;
+    }
+
+    .circle:nth-child(1) {
+        animation-delay: 0.5s;
+    }
+
+    .circle:nth-child(2) {
+        animation-delay: 1s;
+    }
+
+    .circle:nth-child(3) {
+        animation-delay: 1.5s;
+    }
+
+    @keyframes animate {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</body>
+
+</html>
