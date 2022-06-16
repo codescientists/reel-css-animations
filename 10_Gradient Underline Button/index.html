@@ -1,0 +1,63 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Underline with gradient effect - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gradient-underline {
+        border: none;
+        background: none;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    .gradient-underline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 0;
+        background: linear-gradient(90deg, deepskyblue, deeppink);
+        border-radius: 10px;
+        transition: 0.5s ease;
+    }
+
+    .gradient-underline:hover::before {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <button class="gradient-underline">
+        Code Scientist
+    </button>
+
+</body>
+
+</html>

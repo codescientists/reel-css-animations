@@ -1,0 +1,84 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Button Hover Fill Background - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-hover {
+        border: none;
+        background: none;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    .button-hover::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 0;
+        background-color: deepskyblue;
+        transition: 0.5s ease;
+    }
+
+    .button-hover:hover::before {
+        width: 100%;
+    }
+
+    .button-hover::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        background-color: deepskyblue;
+        transition: 0.4s ease;
+        z-index: -1;
+    }
+
+    .button-hover:hover::after {
+        height: 100%;
+        transition-delay: 0.5s;
+    }
+</style>
+
+<body>
+    <button class="button-hover">
+        Code Scientist
+    </button>
+
+</body>
+
+</html>
