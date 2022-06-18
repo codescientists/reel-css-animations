@@ -1,0 +1,113 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ship Logo using CSS - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        background: #191919;
+    }
+
+    div.window {
+        display: flex;
+        position: absolute;
+        width: 400px;
+        height: 300px;
+    }
+
+    div {
+        margin-left: 175px;
+        background: #191919;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #5DBCF9;
+        height: 20px;
+        width: 30px;
+        margin-top: 66px;
+    }
+
+    div.ship {
+        border-width: 10px;
+        height: 44px;
+        width: 80px;
+        margin-left: 150px;
+        margin-top: 100px;
+        border-bottom-width: 5px;
+        border-bottom-color: #191919
+    }
+
+    div.body {
+        position: absolute;
+        height: 26px;
+        width: 80px;
+        margin-left: 125px;
+        border-right: none;
+        border-bottom: transparent;
+        transform: rotate(-30deg);
+        background: transparent;
+        top: 80px;
+    }
+
+    div.body1 {
+        position: absolute;
+        height: 26px;
+        width: 80px;
+        margin-left: 184px;
+        border-left: none;
+        border-bottom: transparent;
+        transform: rotate(30deg);
+        background: transparent;
+        top: 80px;
+    }
+
+    p.line {
+        border-left: 10px solid #5DBCF9;
+        height: 65px;
+        position: absolute;
+        left: 50%;
+        margin-left: -5px;
+        top: 130px;
+    }
+
+    p.line1 {
+        border-left: 10px solid #5DBCF9;
+        height: 110px;
+        position: absolute;
+        left: 50%;
+        margin-left: -5px;
+        top: 180px;
+        transform: rotate(90deg)
+    }
+
+    p.line2 {
+        border-left: 10px solid #5DBCF9;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        margin-left: -5px;
+        top: 100px;
+        transform: rotate(90deg)
+    }
+</style>
+
+<body>
+    <div class="window">
+        <div class="ship"></div>
+        <div class="body"></div>
+        <div class="body1"></div>
+        <p class="line"></p>
+        <p class="line1"></p>
+        <p class="line2"></p>
+    </div>
+
+</body>
+
+</html>
