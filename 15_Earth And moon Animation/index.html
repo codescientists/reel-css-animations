@@ -1,0 +1,90 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+    <title>Earth and Moon CSS Animation - @code.scientist</title>
+</head>
+
+<style>
+    body {
+        background-color: black;
+    }
+
+    .earth {
+        position: absolute;
+        top: calc(50% - 100px);
+        left: calc(50% - 100px);
+    }
+
+    .earth img {
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+    }
+
+    .moon-container {
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+    }
+
+    .moon {
+        animation: spin 20s linear infinite;
+        background: none;
+        height: 50px;
+        pointer-events: none;
+        transform-origin: 25px;
+        width: 50px;
+    }
+
+    .moon img {
+        height: 50px;
+        transform: translateX(-160px) translateY(-160px);
+        width: 50px;
+    }
+
+    .earth img,
+    .moon img {
+        border-radius: 50%;
+        box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
+    }
+
+    .earth img,
+    .moon img {
+        border-radius: 50%;
+        box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotateZ(360deg);
+        }
+    }
+</style>
+
+<body>
+    <article class="earth-demo">
+        <div class="earth">
+            <img src="https://cssanimation.rocks/images/random/earth.png" alt="">
+        </div>
+
+        <div class="moon-container">
+            <div class="moon">
+                <img src="https://cssanimation.rocks/images/random/moon.png" alt="">
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
