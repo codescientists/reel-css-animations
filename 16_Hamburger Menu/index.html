@@ -1,0 +1,97 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Animated Hamburger Menu - @code.scientist</title>
+</head>
+
+<style>
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu {
+        height: 100px;
+        width: 100px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .hamberger-menu {
+        --height: 10px;
+        height: 10px;
+        width: 100%;
+        background-color: white;
+        border-radius: calc(var(--height));
+        position: relative;
+        transform: rotate(0deg);
+        transition: all ease 0.5s;
+    }
+
+    .hamberger-menu::before,
+    .hamberger-menu::after {
+        content: "";
+        position: absolute;
+        background-color: inherit;
+        height: 100%;
+        width: 50%;
+        margin: auto;
+        border-radius: inherit;
+        transition: all ease 0.5s;
+    }
+
+    .hamberger-menu::before {
+        top: -20px;
+        left: 0;
+        transform-origin: left;
+    }
+
+    .hamberger-menu::after {
+        bottom: -20px;
+        right: 0;
+        transform-origin: right;
+    }
+
+    .open {
+        transform: rotate(135deg);
+    }
+
+    .open::before {
+        top: 0;
+        transform: translateX(100%) rotate(-90deg);
+    }
+
+    .open::after {
+        bottom: 0;
+        transform: translateX(-100%) rotate(-90deg);
+    }
+</style>
+
+<body>
+    <div class="menu">
+        <link rel="stylesheet" href="style.css" />
+        <div class="hamberger-menu"></div>
+    </div>
+
+    <script>
+        const menus = document.querySelectorAll(".menu");
+        menus.forEach(function (menu) {
+            const hambergerMenu = menu.querySelector(".hamberger-menu");
+            menu.addEventListener("click", function () {
+                hambergerMenu.classList.toggle("open");
+            });
+        });
+    </script>
+</body>
+
+</html>
