@@ -1,0 +1,107 @@
+<!doctype html class="my-2 rounded-full h-10 w-[16rem] px-4">
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Arrange image parts on hover - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #111827;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    .section {
+        border: 1px solid black;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 300px;
+        position: relative;
+        transition: box-shadow 0.2s linear;
+    }
+
+    .card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .card>img {
+        visibility: hidden;
+    }
+
+    .card .card-part {
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        background-image: url('../img/one.jpg');
+        background-repeat: no-repeat;
+        background-size: 200%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s linear;
+    }
+
+    .card:hover .card-part {
+        transform: translate(0, 0);
+        box-shadow: none;
+    }
+
+    .card .top-left {
+        top: 0;
+        left: 0;
+        background-position: 0 0;
+        transform: translate(-20px, -25px);
+    }
+
+    .card .top-right {
+        top: 0;
+        right: 0;
+        background-position: right 0;
+        transform: translate(5px, -5px);
+    }
+
+    .card .bottom-left {
+        bottom: 0;
+        left: 0;
+        background-position: 0 bottom;
+        transform: translate(-5px, -5px);
+    }
+
+    .card .bottom-right {
+        bottom: 0;
+        right: 0;
+        background-position: right bottom;
+        transform: translate(15px, 15px);
+    }
+</style>
+
+<body>
+    <section class="section">
+        <div class="card">
+            <img src="../img/one.jpg" alt="" />
+            <div class="card-part top-left"></div>
+            <div class="card-part top-right"></div>
+            <div class="card-part bottom-left"></div>
+            <div class="card-part bottom-right"></div>
+        </div>
+    </section>
+</body>
+
+</html>
