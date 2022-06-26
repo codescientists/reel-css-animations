@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Page loader using CSS - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+        padding-top: 10rem;
+    }
+
+    .loader {
+        margin: 600px;
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+
+    .loader::before,
+    .loader::after {
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        mix-blend-mode: multiply;
+        animation: rotate 1s infinite cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .loader::before {
+        background-color: deeppink;
+    }
+
+    .loader::after {
+        background-color: deepskyblue;
+        animation-delay: .5s;
+    }
+
+    @keyframes rotate {
+
+        0%,
+        100% {
+            left: 95px;
+        }
+
+        25% {
+            transform: scale(.3);
+        }
+
+        50% {
+            left: 0;
+        }
+
+        75% {
+            transform: scale(1);
+        }
+    }
+</style>
+
+<body>
+    <span class="loader"></span>
+</body>
+
+</html>
