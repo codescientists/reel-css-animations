@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>3D plane effect using CSS - @code.scientist x @julianvelez1997</title>
+</head>
+
+<style>
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+
+    /*********************/
+    /* CUSTOM PROPERTIES */
+    /*********************/
+    :root {
+        --color-main: #333;
+        --color-background: #ccc;
+
+        --color-plane: dodgerblue;
+    }
+
+    /********************/
+    /* */
+    /********************/
+    body {
+        margin: 0;
+        height: 100vh;
+        background-color: lightskyblue;
+        font-family: 'Saira', sans-serif;
+        color: var(--color-main);
+
+        display: grid;
+        place-items: center;
+    }
+
+    div.scene {
+        perspective: 30deg;
+    }
+
+    div.plane {
+        --size-plane: 40vmin;
+        width: var(--size-plane);
+        aspect-ratio: 210/297;
+
+        display: flex;
+
+        animation: rotate 120s infinite linear;
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotatex(3turn) rotatey(5turn) rotatez(7turn);
+        }
+    }
+
+    div.wing {
+        flex-grow: 1;
+        display: flex;
+    }
+
+    div.wing:first-of-type {
+        transform-origin: right center;
+        transform: rotatey(60deg);
+    }
+
+    div.wing:last-of-type {
+        transform-origin: left center;
+        transform: rotatey(-60deg);
+    }
+
+    div.wing::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    div.wing:first-of-type::after {
+        clip-path: polygon(100% 0, 100% 100%, 50% 100%, 100% 0);
+        background-color: #cccccc;
+    }
+
+    div.wing:last-of-type::after {
+        clip-path: polygon(0 0, 50% 100%, 0 100%, 0 0);
+        background-color: #ffffff;
+    }
+
+    div.innerwing {
+        width: 100%;
+    }
+
+    div.wing:first-of-type div.innerwing {
+        transform-origin: right top;
+        transform: rotate3d(52.55, -297, 0, 120deg);
+    }
+
+    div.wing:last-of-type div.innerwing {
+        transform-origin: left top;
+        transform: rotate3d(-52.55, -297, 0, 60deg);
+    }
+
+
+    div.wing div.innerwing::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    div.wing:first-of-type div.innerwing::after {
+        clip-path: polygon(100% 0, 50% 100%, 0 100%, 100% 0);
+        background-color: #ffffff;
+    }
+
+
+
+    div.wing:last-of-type div.innerwing::after {
+        clip-path: polygon(0 0, 0% 100%, 50% 100%, 0 0);
+        background-color: #cccccc;
+    }
+</style>
+
+<body>
+    <div class="scene">
+        <div class="plane">
+            <div class="wing">
+                <div class="innerwing"></div>
+            </div>
+            <div class="wing">
+                <div class="innerwing"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
