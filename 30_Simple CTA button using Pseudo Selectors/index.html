@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Simple CTA button using pseudo selectors - @code.scientist x @codingtorque</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15rem;
+    }
+
+    .btn {
+        position: relative;
+        color: white;
+        border: none;
+        font-size: 2rem;
+        background: transparent;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .btn::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 30%;
+        background: deepskyblue;
+        border-radius: 10px;
+        z-index: -1;
+        transition: 0.3s ease;
+    }
+
+    .btn:hover::after {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <button class="btn">Hover me</button>
+</body>
+
+</html>
