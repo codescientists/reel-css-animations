@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee Outline&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>20k Followers - @code.scientist x @julianvelez1997</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .followDiv,
+    .numDiv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        transform: translateY(-1.6rem);
+        --sizeVar: 12vmin;
+        --neonColor: 100, 100, 255;
+        text-shadow: 0 0 6px rgba(var(--neonColor), 0.98),
+            0 0 30px rgba(var(--neonColor), 0.42), 0 0 12px rgba(var(--neonColor), 0.58),
+            0 0 22px rgba(var(--neonColor), 0.84), 0 0 38px rgba(var(--neonColor), 0.88),
+            0 0 60px rgba(var(--neonColor), 1);
+    }
+
+    .followDiv {
+        font-size: var(--sizeVar);
+        margin-left: calc(var(--sizeVar) / 10);
+        margin-top: calc(var(--sizeVar) * 1.5);
+        letter-spacing: calc(var(--sizeVar) / 1.75);
+        font-family: "Yellowtail", cursive;
+        --neonColor: 255, 100, 255;
+    }
+
+    .numDiv {
+        font-size: calc(var(--sizeVar) * 3.8);
+        letter-spacing: normal;
+        font-family: "Bungee Outline", cursive;
+    }
+
+    .numDiv span {
+        animation: flicker 600ms linear infinite;
+    }
+
+    .numDiv span:nth-of-type(2) {
+        animation-delay: -200ms;
+        animation-duration: 500ms;
+    }
+
+    .numDiv span:nth-of-type(3) {
+        animation-delay: -50ms;
+        animation-duration: 700ms;
+    }
+
+    @keyframes flicker {
+        0% {
+            color: #666;
+            text-shadow: none;
+        }
+
+        5% {
+            color: #666;
+            text-shadow: none;
+        }
+
+        10% {
+            color: #fff;
+            text-shadow: none;
+        }
+
+        15% {
+            color: #fff;
+            text-shadow: inherit;
+        }
+
+        80% {
+            color: #fff;
+            text-shadow: inherit;
+        }
+
+        90% {
+            color: #666;
+            text-shadow: none;
+        }
+
+        100% {
+            color: #666;
+            text-shadow: none;
+        }
+    }
+
+    body {
+        background-color: #000000;
+    }
+</style>
+
+<body>
+    <div class="numDiv"><span>2</span><span>0</span><span>k</span></div>
+    <div class="followDiv">Followers</div>
+</body>
+
+</html>
