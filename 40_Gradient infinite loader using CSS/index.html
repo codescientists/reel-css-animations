@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Gradient infinite loader using CSS - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+    }
+
+    .loading-box {
+        position: relative;
+        width: 400px;
+        height: 50px;
+        border-radius: 50px;
+        border: 2px solid black;
+        overflow: hidden;
+    }
+
+    .loader {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 50px;
+        background: linear-gradient(45deg, #b6b5ff, #ff9797);
+        left: 0%;
+    }
+
+    .loader {
+        left: -100%;
+        animation: load 3s linear infinite;
+    }
+
+    @keyframes load {
+        0% {
+            left: -100%;
+        }
+
+        100% {
+            left: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="loading-box">
+        <div class="loader"></div>
+    </div>
+</body>
+
+</html>
