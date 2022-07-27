@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Loading Animation using CSS - @code.scientist</title>
+</head>
+
+<style>
+    :root {
+        --yellow: #ffc744;
+        --red: #ff0062;
+        --blue: #3ae8ff;
+        --violet: #e72fff;
+    }
+
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+    }
+
+    div.container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div>div {
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        margin: 2vw;
+        background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        animation: bounce 1.5s 0.5s linear infinite;
+    }
+
+    .yellow {
+        background-color: var(--yellow);
+    }
+
+    .red {
+        background-color: var(--red);
+        animation-delay: 0.1s;
+    }
+
+    .blue {
+        background-color: var(--blue);
+        animation-delay: 0.2s;
+    }
+
+    .violet {
+        background-color: var(--violet);
+        animation-delay: 0.3s;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        50%,
+        100% {
+            transform: scale(1);
+            filter: blur(0px);
+        }
+
+        25% {
+            transform: scale(0.6);
+            filter: blur(3px);
+        }
+
+        75% {
+            filter: blur(3px);
+            transform: scale(1.4);
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="violet"></div>
+    </div>
+</body>
+
+</html>
