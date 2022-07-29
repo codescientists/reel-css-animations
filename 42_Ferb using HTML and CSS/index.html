@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Ferb using HTML & CSS - @code.scientist</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #1d1b38;
+    }
+
+    .container {
+        position: absolute;
+        left: 40%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    .head {
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        border-bottom-left-radius: 20px;
+        border-bottom: 200px solid #ecbcb4;
+        border-left: 160px solid transparent;
+        border-right: 160px solid transparent;
+        transform: rotate(150deg);
+    }
+
+    .head::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 200px;
+        top: 100px;
+        left: -36px;
+        border: solid 5px #a1665e;
+        border-color: #a1665e transparent transparent transparent;
+        border-radius: 50%/10px 10px 0 0;
+    }
+
+    .head::after {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 34px;
+        background: #ecbcb4;
+        border: 2px solid #a1665e;
+        border-bottom: none;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        transform: rotate(-51deg);
+        top: 110px;
+        left: -122px;
+    }
+
+    .eye {
+        position: absolute;
+        height: 70px;
+        width: 80px;
+        background: white;
+        border-radius: 50%;
+        border: 2px solid black;
+        transform: rotate(-30deg);
+        left: 100px;
+        top: -36px;
+    }
+
+    .eye::before {
+        content: "";
+        position: absolute;
+        height: 22px;
+        width: 26px;
+        border-radius: 50%;
+        background: #1d1b38;
+        top: 28px;
+        left: 10px;
+        transform: rotate(-10deg);
+    }
+
+    .eye:after {
+        content: "";
+        position: absolute;
+        height: 8px;
+        width: 10px;
+        border-radius: 50%;
+        background: #fff;
+        top: 35px;
+        left: 24px;
+        transform: rotate(-10deg);
+        box-shadow: 100px 36px 0 -1px #a1665e,
+            70px 36px 0 -1px #a1665e,
+            85px 50px 0 -1px #a1665e;
+    }
+
+    .eye1 {
+        top: -28px;
+        left: 50px;
+        z-index: -1;
+    }
+
+    .hair {
+        position: relative;
+        z-index: -2;
+        top: 2px;
+        right: 6px;
+    }
+
+    .hair>div:nth-child(1) {
+        position: absolute;
+        background: transparent;
+        height: 30px;
+        width: 100px;
+        border-top: 20px solid red;
+        border-radius: 50px 40px 0 0;
+        bottom: 40px;
+        left: 180px;
+        transform: rotate(30deg);
+    }
+
+    .hair>div:nth-child(2) {
+        position: absolute;
+        background: transparent;
+        height: 30px;
+        width: 100px;
+        border-top: 20px solid red;
+        border-radius: 50px 40px 0 0;
+        bottom: 40px;
+        left: 200px;
+        transform: rotate(70deg);
+    }
+
+    .hair>div:nth-child(3) {
+        position: absolute;
+        background: transparent;
+        height: 30px;
+        width: 80px;
+        border-top: 20px solid red;
+        border-radius: 50px 40px 0 0;
+        bottom: 50px;
+        left: 220px;
+        transform: rotate(130deg);
+    }
+
+    .hair>div:nth-child(4) {
+        position: absolute;
+        background: transparent;
+        height: 30px;
+        width: 100px;
+        border-top: 20px solid red;
+        border-radius: 50px 40px 0 0;
+        bottom: 20px;
+        left: 200px;
+        transform: rotate(20deg);
+    }
+
+    .hair>div:nth-child(5) {
+        position: absolute;
+        background: transparent;
+        height: 30px;
+        width: 50px;
+        border-top: 20px solid red;
+        border-radius: 50px 40px 0 0;
+        bottom: 20px;
+        left: 260px;
+        transform: rotate(10deg);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="head"></div>
+        <div class="eye"></div>
+        <div class="eye eye1"></div>
+        <div class="hair">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
