@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Social Media Icons Hover Effect - @code.scientist x @codingtorque</title>
+</head>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        padding-top: 20rem;
+        background: #000;
+    }
+
+    div {
+        display: flex;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #b7b7b7;
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(28, 28, 28);
+        border-radius: 10px;
+        position: relative;
+        transition: 0.4s;
+    }
+
+    .link:hover {
+        transform: rotate(45deg);
+    }
+
+    .link::before {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: #373737;
+        border-radius: 10px;
+        transition: opasity 0.2s;
+    }
+
+    .link:hover::before {
+        opacity: 0.4;
+    }
+
+    .link:nth-child(1)::before {
+        background: #c32aa3;
+    }
+
+    .link:nth-child(2)::before {
+        background: #1da1f2;
+    }
+
+    .link:nth-child(3)::before {
+        background: #25d366;
+    }
+
+    .link:nth-child(4)::before {
+        background: #0a66c2;
+    }
+
+    .link:hover::before {
+        transform: translate(-4px, -4px);
+        filter: blur(10px);
+    }
+
+    .link i {
+        font-size: 1.7em;
+        transition: all 0.4s;
+    }
+
+    .link:hover i {
+        color: #c8c8c8;
+        transform: rotate(-45deg);
+    }
+
+    .link:hover i.instagram {
+        color: #c32aa3;
+    }
+
+    .link:hover i.twitter {
+        color: #1da1f2;
+    }
+
+    .link:hover i.whatsapp {
+        color: #25d366;
+    }
+
+    .link:hover i.linkedin {
+        color: #0a66ca;
+    }
+</style>
+
+<body>
+    <div>
+        <a href="#" class="link">
+            <i class="fab fa-instagram instagram"></i>
+        </a>
+        <a href="#" class="link">
+            <i class="fab fa-twitter twitter"></i>
+        </a>
+        <a href="#" class="link">
+            <i class="fab fa-whatsapp whatsapp"></i>
+        </a>
+        <a href="#" class="link">
+            <i class="fab fa-linkedin linkedin"></i>
+        </a>
+    </div>
+
+</body>
+
+</html>
