@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Digital Clock using JavaScript - @code.scientist</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins';
+    }
+
+    body {
+        background-color: #111827;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15rem;
+    }
+
+    .clock {
+        font-size: 30px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div id="clockDisplay" class="clock" onload="showTime"></div>
+
+    <script>
+        const showTime = () => {
+            let date = new Date();
+            let h = date.getHours(); // 0 - 23
+            let m = date.getMinutes(); // 0 - 59
+            let s = date.getSeconds(); // 0 - 59
+            let session = "AM";
+            let day = date.getDay();
+
+            if (h == 0) {
+                h = 12;
+            }
+
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            let time = h + " : " + m + " : " + s + " " + session;
+            document.getElementById("clockDisplay").innerText = time;
+            document.getElementById("clockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
+
+        }
+        showTime();
+    </script>
+</body>
+
+</html>
