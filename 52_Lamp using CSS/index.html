@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Lamp Animation using CSS - @code.scientist x @julianvelez1997</title>
+</head>
+
+<style>
+    body {
+        background: rgb(0, 49, 20);
+        background: radial-gradient(circle,
+                rgba(0, 49, 20, 1) 10%,
+                rgba(0, 16, 8, 1) 25%,
+                rgba(0, 0, 0, 1) 100%);
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lamp {
+        height: 23rem;
+        width: 12rem;
+        position: relative;
+        background: rgb(36, 154, 97);
+        background: linear-gradient(90deg,
+                rgba(36, 154, 97, 1) 10%,
+                rgba(56, 170, 113, 1) 30%,
+                rgba(36, 154, 97, 1) 55%);
+        clip-path: polygon(30% 0, 70% 0, 100% 65%, 70% 100%, 30% 100%, 0 65%);
+        z-index: 20;
+        border-radius: 50%;
+    }
+
+    .top-cover,
+    .bottom-cover {
+        width: 100%;
+        height: 17.5%;
+        position: absolute;
+    }
+
+    .top-cover {
+        background: rgb(24, 24, 24);
+        background: linear-gradient(90deg,
+                rgba(24, 24, 24, 1) 30%,
+                rgba(37, 41, 36, 1) 45%,
+                rgba(24, 24, 24, 1) 100%);
+    }
+
+    .bottom-cover {
+        background: rgb(35, 40, 33);
+        background: linear-gradient(90deg,
+                rgba(35, 40, 33, 1) 25%,
+                rgba(42, 50, 41, 1) 45%,
+                rgba(35, 40, 33, 1) 63%);
+        top: 85%;
+    }
+
+    .lamp-bottom {
+        width: 0;
+        height: 0;
+        border-left: 6rem solid transparent;
+        border-right: 6rem solid transparent;
+        border-top: 6rem solid rgba(35, 40, 33, 1);
+        border-radius: 50%;
+        transform: rotate(180deg);
+        position: absolute;
+        top: 70%;
+    }
+
+    .blob1,
+    .blob2,
+    .blob3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        fill: #00ff73;
+        z-index: -1;
+    }
+
+    .blob1 {
+        width: 150px;
+        animation: move 8s ease-in-out infinite;
+        transform-origin: 25% 75%;
+    }
+
+    .blob2 {
+        width: 200px;
+        animation: move 5s ease-in-out infinite;
+        transform-origin: 50% 50%;
+    }
+
+    .blob3 {
+        width: 175px;
+        animation: move 10s ease-in-out infinite;
+        transform-origin: 10% 60%;
+    }
+
+    .bubble1,
+    .bubble2,
+    .bubble3 {
+        width: 15px;
+        height: 15px;
+        background-color: rgba(0, 40, 16, 0.1);
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        z-index: -10;
+    }
+
+    .bubble1 {
+        tranform-origin: 30% 50%;
+        animation: bubbly 15s ease infinite;
+    }
+
+    .bubble2 {
+        tranform-origin: 10% 70%;
+        animation: bubbly 10s ease-in-out infinite;
+    }
+
+    .bubble3 {
+        tranform-origin: 50% 30%;
+        animation: bubbly 12s linear infinite;
+    }
+
+    @keyframes move {
+        0% {
+            transform: scale(0.25) translate(10px, -30px);
+        }
+
+        40% {
+            transform: scale(0.35, 0.45) translate(180px, 300px) rotate(180deg);
+        }
+
+        80% {
+            transform: scale(0.35) translate(0, 50px) rotate(-20deg);
+        }
+
+        100% {
+            transform: scale(0.25) translate(10px, -30px);
+        }
+    }
+
+    @keyframes bubbly {
+        0% {
+            transform: translate(-50px, -50px);
+        }
+
+        25% {
+            transform: translate(30px, 100px);
+        }
+
+        75% {
+            transform: translate(60px, -30px);
+        }
+
+        100% {
+            transform: translate(-50px, -50px);
+        }
+    }
+</style>
+
+<body>
+    <div class="lamp">
+        <div class="top-cover"></div>
+        <div class="bubble1"></div>
+        <div class="bubble2"></div>
+        <div class="bubble3"></div>
+        <div class="blob1">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 310 350">
+                <path
+                    d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z" />
+            </svg>
+        </div>
+        <div class="blob2">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 310 350">
+                <path
+                    d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z" />
+            </svg>
+        </div>
+        <div class="blob3">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 310 350">
+                <path
+                    d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z" />
+            </svg>
+        </div>
+        <div class="bottom-cover"></div>
+    </div>
+    <div class="lamp-bottom"></div>
+</body>
+
+</html>

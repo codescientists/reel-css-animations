@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Image hover effect using CSS - @code.scientist x @julianvelez1997</title>
+</head>
+
+<style>
+    picture {
+        position: relative;
+        cursor: pointer;
+        display: inline-grid;
+        overflow: hidden;
+    }
+
+    picture::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        /* -1px instead of 0 to avoid tiny gaps on the edges */
+        --_g: conic-gradient(at 50% 25%, rgb(0 0 0/68%) 75%, #0000 0) no-repeat;
+        background: var(--_g) 0 calc(34% - var(--_p, 0%)) / 50.1% 400%,
+            var(--_g) 100% calc(100% - var(--_p, 0%)) / 50.1% 400%;
+        transition: 0.5s linear;
+    }
+
+    picture.alt::after {
+        transform: scale(-1);
+    }
+
+    picture:hover::after {
+        --_p: 134%;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 30px;
+        place-content: center;
+        background: #a8dba8;
+    }
+</style>
+
+<body>
+    <picture>
+        <img src="../img/one.jpg" alt="a astronaut" />
+    </picture>
+
+    <picture class="alt">
+        <img src="../img/two.jpg" alt="a astronaut" />
+    </picture>
+
+</body>
+
+</html>
