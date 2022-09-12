@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <title>Animated Gradient Underglow - @code.scientist x @codingtorque</title>
+</head>
+
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15rem;
+        background-color: black;
+        color: #999;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .text-box {
+        background: hsl(0, -3%, 14%);
+        padding: 16px 24px;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .01);
+        cursor: pointer;
+        letter-spacing: 2px;
+    }
+
+    .text-box::after {
+        position: absolute;
+        content: "";
+        top: 15px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        transform: scale(0.9) translateZ(0);
+        filter: blur(15px);
+        background: linear-gradient(to left,
+                #ff5770,
+                #e4428d,
+                #c42da8,
+                #9e16c3,
+                #6501de,
+                #9e16c3,
+                #c42da8,
+                #e4428d,
+                #ff5770);
+        background-size: 200% 200%;
+        animation: animateGlow 1.25s linear infinite;
+    }
+
+    @keyframes animateGlow {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        100% {
+            background-position: 200% 50%;
+        }
+    }
+</style>
+
+<body>
+    <div class="text-box">
+        @code.scientist x @codingtorque
+    </div>
+</body>
+
+</html>
